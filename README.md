@@ -22,6 +22,17 @@ npm run dev
 # open http://localhost:5173
 ```
 
+## Deploying to GitHub Pages
+1. Update `vite.config.ts` so the `base` option matches this repository name (`/displacer/`).
+2. Build the production bundle locally:
+   ```bash
+   npm run build
+   ```
+3. Commit and push the included `.github/workflows/deploy.yml` workflow (or add it to your fork). The workflow builds the site on every push to `main`, then publishes the `dist/` output using GitHub Pages.
+4. In your repository settings, open **Pages** and confirm the source is set to “GitHub Actions.” The deployment workflow will publish to the `github-pages` environment automatically, and subsequent pushes to `main` will refresh the live site.
+
+Once the first deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
+
 ## Usage Notes
 - Double-click anywhere on the curve canvas (excluding the locked edges) to insert a new handle.
 - Select a handle to adjust it via sliders, numeric inputs, or arrow keys; press `Delete`/`Backspace` to remove.
