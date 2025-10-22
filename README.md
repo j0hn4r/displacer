@@ -22,6 +22,16 @@ npm run dev
 # open http://localhost:5173
 ```
 
+## Deploying to GitHub Pages
+1. Update `vite.config.ts` so the `base` option matches this repository name (`/displacer/`).
+2. Build the production bundle locally:
+   ```bash
+   npm run build
+   ```
+3. Publish the contents of the generated `dist/` directory to GitHub Pages. You can automate this with a GitHub Actions workflow that runs the build and deploys `dist/`, or push `dist/` to a `gh-pages` branch using `git subtree push --prefix dist origin gh-pages`.
+
+Once the deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
+
 ## Usage Notes
 - Double-click anywhere on the curve canvas (excluding the locked edges) to insert a new handle.
 - Select a handle to adjust it via sliders, numeric inputs, or arrow keys; press `Delete`/`Backspace` to remove.
