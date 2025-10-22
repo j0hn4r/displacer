@@ -32,6 +32,9 @@ npm run dev
 4. In your repository settings, open **Pages** and confirm the source is set to “GitHub Actions.” The deployment workflow will publish to the `github-pages` environment automatically, and subsequent pushes to `main` will refresh the live site.
 
 Once the first deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
+3. Publish the contents of the generated `dist/` directory to GitHub Pages. You can automate this with a GitHub Actions workflow that runs the build and deploys `dist/`, or push `dist/` to a `gh-pages` branch using `git subtree push --prefix dist origin gh-pages`.
+
+Once the deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
 
 ## Usage Notes
 - Double-click anywhere on the curve canvas (excluding the locked edges) to insert a new handle.
