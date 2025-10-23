@@ -28,6 +28,10 @@ npm run dev
    ```bash
    npm run build
    ```
+3. Commit and push the included `.github/workflows/deploy.yml` workflow (or add it to your fork). The workflow builds the site on every push to `main`, then publishes the `dist/` output using GitHub Pages.
+4. In your repository settings, open **Pages** and confirm the source is set to “GitHub Actions.” The deployment workflow will publish to the `github-pages` environment automatically, and subsequent pushes to `main` will refresh the live site.
+
+Once the first deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
 3. Publish the contents of the generated `dist/` directory to GitHub Pages. You can automate this with a GitHub Actions workflow that runs the build and deploys `dist/`, or push `dist/` to a `gh-pages` branch using `git subtree push --prefix dist origin gh-pages`.
 
 Once the deployment completes, the site will be available at `https://<username>.github.io/displacer/`.
